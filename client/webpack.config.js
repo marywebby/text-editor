@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack Plugin',
+        title: 'JATE',
       }),
       // creates service worker 
       new InjectManifest({
@@ -37,9 +37,17 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
-            sizes: [128, 192, 256, 384, 512],
-            destination: path.join('assets', 'icons'),
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512]
+          },
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '1024x1024'
+          },
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '1024x1024',
+            purpose: 'maskable'
           }
         ]
       }),
